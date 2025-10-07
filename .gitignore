@@ -1,0 +1,4 @@
+.env
+*.pdf
+*.apkg
+**/__pycache__/**
