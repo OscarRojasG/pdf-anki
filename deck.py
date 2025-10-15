@@ -23,9 +23,13 @@ def create_anki_deck(questions: list, deck_name="Gemini PDF Quiz", output_file="
             options = q.get("options", [])
             if options:
                 question_text += "<br><br>" + "<br>".join(options)
+
+        elif q_type == "true_or_false":
+            question_text += "<br><br>(True or False)"
+
         elif q_type == "fill_blank":
-            if "___" not in question_text:
-                question_text += "<br><br>Fill in the blank: ___"
+            question_text += "<br><br>Fill in the blank: ___"
+
         elif q_type == "short_answer":
             question_text += "<br><br>(Short answer)"
 

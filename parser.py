@@ -17,13 +17,14 @@ def parse_questions_from_text(text: str):
     prompt = f'''
     You are parsing exam-style questions from a PDF. The text may contain:
     - Multiple-choice questions
+    - True or false questions
     - Fill-in-the-blank questions
     - Short-answer questions
     
 
     Return ONLY a valid JSON array, with each object in the format:
     {{
-      "type": "multiple_choice" | "fill_blank" | "short_answer",
+      "type": "multiple_choice" | "true_or_false" | "fill_blank" | "short_answer",
       "question": "string (if fill_blank, include blanks as ___ directly in text)",
       "options": ["A", "B", "C", "D"] (only if multiple_choice),
       "answer": "string",
