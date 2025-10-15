@@ -33,7 +33,7 @@ def create_anki_deck(questions: list, deck_name="Gemini PDF Quiz", output_file="
         elif q_type == "short_answer":
             question_text += "<br><br>(Short answer)"
 
-        answer += "\n"
+        answer += "<br><br>"
         answer += q.get("feedback", "").strip()
 
         note = genanki.Note(model=model, fields=[question_text, answer])
